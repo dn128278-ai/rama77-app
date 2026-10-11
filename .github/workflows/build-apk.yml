@@ -27,18 +27,19 @@ jobs:
         # Folders bana rahe hain
         mkdir -p components/AndroidEmulator components/CodeExplorer components/AnalysisDoc components/AdminPanel utils data
         
-        # Core Components
+        # Core Components & Utils
         [ -f CodeExplorer.tsx ] && mv CodeExplorer.tsx components/CodeExplorer/
         [ -f AnalysisReport.tsx ] && mv AnalysisReport.tsx components/AnalysisDoc/
         [ -f AdminPanel.tsx ] && mv AdminPanel.tsx components/AdminPanel/
         [ -f projectZipGenerator.ts ] && mv projectZipGenerator.ts utils/
+        [ -f marketScheduleEngine.ts ] && mv marketScheduleEngine.ts utils/
         
         # Data Files
         [ -f androidProjectFiles.ts ] && mv androidProjectFiles.ts data/
         [ -f mockData.ts ] && mv mockData.ts data/
         [ -f backendApiStore.ts ] && mv backendApiStore.ts data/
         
-        # PhoneFrame, Store, aur uski saari screens (sab same folder me)
+        # PhoneFrame, Store, aur uski saari screens
         [ -f nativeAlertStore.ts ] && mv nativeAlertStore.ts components/AndroidEmulator/
         [ -f PhoneFrame.tsx ] && mv PhoneFrame.tsx components/AndroidEmulator/
         [ -f DrawerMenu.tsx ] && mv DrawerMenu.tsx components/AndroidEmulator/
@@ -61,7 +62,6 @@ jobs:
         [ -f NativeAlertDialog.tsx ] && mv NativeAlertDialog.tsx components/AndroidEmulator/
         [ -f EmulatorModals.tsx ] && mv EmulatorModals.tsx components/AndroidEmulator/
         [ -f RootDetectionModal.tsx ] && mv RootDetectionModal.tsx components/AndroidEmulator/
-        [ -f marketScheduleEngine.ts ] && mv marketScheduleEngine.ts components/AndroidEmulator/
 
     - name: Build Web Application
       run: bun run build
