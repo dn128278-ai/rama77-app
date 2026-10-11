@@ -17,10 +17,13 @@ jobs:
       with:
         node-version: 20
 
-    - name: Install Dependencies & Build Web
+    - name: Install Bun and Dependencies
       run: |
-        npm install
-        npm run build
+        npm install -g bun
+        bun install
+
+    - name: Build Web Application
+      run: bun run build
 
     - name: Setup Capacitor and Android
       run: |
