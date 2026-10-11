@@ -22,6 +22,15 @@ jobs:
         npm install -g bun
         bun install
 
+    - name: Organize Files for Build
+      run: |
+        mkdir -p components/AndroidEmulator components/CodeExplorer components/AnalysisDoc components/AdminPanel utils
+        [ -f PhoneFrame.tsx ] && mv PhoneFrame.tsx components/AndroidEmulator/
+        [ -f CodeExplorer.tsx ] && mv CodeExplorer.tsx components/CodeExplorer/
+        [ -f AnalysisReport.tsx ] && mv AnalysisReport.tsx components/AnalysisDoc/
+        [ -f AdminPanel.tsx ] && mv AdminPanel.tsx components/AdminPanel/
+        [ -f projectZipGenerator.ts ] && mv projectZipGenerator.ts utils/
+
     - name: Build Web Application
       run: bun run build
 
