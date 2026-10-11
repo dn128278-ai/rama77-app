@@ -27,24 +27,27 @@ jobs:
         # Folders bana rahe hain
         mkdir -p components/AndroidEmulator components/CodeExplorer components/AnalysisDoc components/AdminPanel utils data
         
-        # Core Components ko unke folders me move kar rahe hain
+        # Core Components
         [ -f CodeExplorer.tsx ] && mv CodeExplorer.tsx components/CodeExplorer/
         [ -f AnalysisReport.tsx ] && mv AnalysisReport.tsx components/AnalysisDoc/
         [ -f AdminPanel.tsx ] && mv AdminPanel.tsx components/AdminPanel/
         [ -f projectZipGenerator.ts ] && mv projectZipGenerator.ts utils/
         
-        # Data Files
+        # Data & Store Files
         [ -f androidProjectFiles.ts ] && mv androidProjectFiles.ts data/
         [ -f mockData.ts ] && mv mockData.ts data/
+        [ -f backendApiStore.ts ] && mv backendApiStore.ts data/
+        [ -f nativeAlertStore.ts ] && mv nativeAlertStore.ts data/
         
-        # PhoneFrame aur uski saari screens ko components/AndroidEmulator me move kar rahe hain
+        # PhoneFrame aur uski saari screens
         [ -f PhoneFrame.tsx ] && mv PhoneFrame.tsx components/AndroidEmulator/
         [ -f DrawerMenu.tsx ] && mv DrawerMenu.tsx components/AndroidEmulator/
         [ -f MpinLoginScreen.tsx ] && mv MpinLoginScreen.tsx components/AndroidEmulator/
         [ -f RegisterScreen.tsx ] && mv RegisterScreen.tsx components/AndroidEmulator/
         [ -f HomeScreen.tsx ] && mv HomeScreen.tsx components/AndroidEmulator/
         [ -f FundsScreen.tsx ] && mv FundsScreen.tsx components/AndroidEmulator/
-        [ -f PassBookScreen.tsx ] && mv PassBookScreen.tsx components/AndroidEmulator/
+        [ -f PassBookScreen.tsx ] && mv PassBookScreen.tsx components/AndroidEmulator/PassbookScreen.tsx
+        [ -f PassbookScreen.tsx ] && mv PassbookScreen.tsx components/AndroidEmulator/
         [ -f GameCenterScreen.tsx ] && mv GameCenterScreen.tsx components/AndroidEmulator/
         [ -f SubGameBetScreen.tsx ] && mv SubGameBetScreen.tsx components/AndroidEmulator/
         [ -f HistoryScreen.tsx ] && mv HistoryScreen.tsx components/AndroidEmulator/
@@ -58,6 +61,7 @@ jobs:
         [ -f NativeAlertDialog.tsx ] && mv NativeAlertDialog.tsx components/AndroidEmulator/
         [ -f EmulatorModals.tsx ] && mv EmulatorModals.tsx components/AndroidEmulator/
         [ -f RootDetectionModal.tsx ] && mv RootDetectionModal.tsx components/AndroidEmulator/
+        [ -f marketScheduleEngine.ts ] && mv marketScheduleEngine.ts components/AndroidEmulator/
 
     - name: Build Web Application
       run: bun run build
