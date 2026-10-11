@@ -1,0 +1,6 @@
+{
+  "name": "RAMA77 - Android Studio Suite & Mobile Emulator",
+  "description": "Complete UI/UX analysis, live interactive Android emulator, and full Android Studio Kotlin & XML source code generator for the RAMA77 application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
